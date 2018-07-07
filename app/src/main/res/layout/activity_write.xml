@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    android:weightSum="3"
+
+    tools:context="com.example.strange.tempnote.Write">
+
+    <EditText
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/titleET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5" />
+
+    <EditText
+        android:textColor="#fff"
+        android:id="@+id/noteET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.25" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".25"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/okBT"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Ok"
+            android:textColor="#fff" />
+        <Button
+            android:id="@+id/cancelBT"
+            android:background="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
