@@ -9,22 +9,6 @@
     android:weightSum="3"
 
     tools:context="com.example.strange.tempnote.Write">
-
-    <EditText
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:id="@+id/titleET"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".5" />
-
-    <EditText
-        android:textColor="#fff"
-        android:id="@+id/noteET"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.25" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -33,6 +17,7 @@
         android:weightSum="2">
 
         <Button
+            android:textAllCaps="false"
             android:id="@+id/okBT"
             android:background="@color/colorPrimaryDark"
             android:layout_width="0dp"
@@ -41,6 +26,7 @@
             android:text="Ok"
             android:textColor="#fff" />
         <Button
+            android:textAllCaps="false"
             android:id="@+id/cancelBT"
             android:background="@color/colorAccent"
             android:layout_width="0dp"
@@ -50,6 +36,32 @@
             android:textColor="#fff" />
 
     </LinearLayout>
+
+    <EditText
+        android:textCursorDrawable="@null"
+        android:paddingLeft="10dp"
+        android:hint="Title"
+        android:gravity="top|left"
+        android:textColorHint="@color/colorHint"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/titleET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5" />
+
+    <EditText
+        android:textCursorDrawable="@null"
+        android:paddingLeft="10dp"
+        android:hint="Write something"
+        android:textColorHint="@color/colorHint"
+        android:gravity="left|top"
+        android:textColor="#fff"
+        android:id="@+id/noteET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.25" />
+
 
 
 </LinearLayout>

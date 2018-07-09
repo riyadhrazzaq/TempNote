@@ -8,7 +8,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,16 +21,16 @@
                 android:id="@+id/titleTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Title"
+
                 android:textColor="#fff"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:maxLength="70"
                 android:id="@+id/noteTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem Ipsum of a shitty note app."
                 android:textColor="#fff"
                 android:textSize="20sp" />
             <TextView
@@ -38,7 +38,6 @@
                 android:id="@+id/expTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5 days left"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
