@@ -23,6 +23,7 @@ import java.util.TreeMap;
 public class processTimerReciever extends BroadcastReceiver {
 
     public static Map<Long, Integer> map = new TreeMap<Long, Integer>();
+    int count = 0;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -31,17 +32,17 @@ public class processTimerReciever extends BroadcastReceiver {
         Set set = map.entrySet();
         Iterator it = set.iterator();
         //note deletion task
-
-        int count = 0;
+        count = 0;
         while (it.hasNext()) {
             Map.Entry val = (Map.Entry) it.next();
             if (Long.valueOf(System.currentTimeMillis()).compareTo((Long) val.getKey()) != -1) {
                 fun.removeById(Integer.parseInt(String.valueOf(val.getValue())));
+                map.remove(val.getKey());
                 count++;
             }
         }
+        MainActivity.mAdapter.swapCursor(fun.getAllByCursor());
         MainActivity.mAdapter.notifyDataSetChanged();
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = String.valueOf(R.string.channel_name);
@@ -59,11 +60,15 @@ public class processTimerReciever extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.ic_down)
                 .setContentTitle("TempNote")
                 .setContentText(count + " notes deleted")
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setVibrate(new long[]{1000, 1000});
 
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-        notificationManager.notify(177, mBuilder.build());
 
+        if (count > 0) {
+            count=0;
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+            notificationManager.notify(177, mBuilder.build());
+        }
 
     }
 }
