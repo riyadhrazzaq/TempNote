@@ -82,6 +82,6 @@ public class Write extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         System.exit(0);
-        //startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
     }
 }

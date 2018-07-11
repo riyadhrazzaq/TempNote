@@ -34,7 +34,6 @@ public class processTimerReciever extends BroadcastReceiver {
 
         int count = 0;
         while (it.hasNext()) {
-
             Map.Entry val = (Map.Entry) it.next();
             if (Long.valueOf(System.currentTimeMillis()).compareTo((Long) val.getKey()) != -1) {
                 fun.removeById(Integer.parseInt(String.valueOf(val.getValue())));

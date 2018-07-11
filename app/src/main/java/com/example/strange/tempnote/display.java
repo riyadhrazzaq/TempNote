@@ -57,7 +57,7 @@ public class display extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "ddafuc", Toast.LENGTH_SHORT).show();
+        finish();
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 }

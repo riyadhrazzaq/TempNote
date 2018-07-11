@@ -46,7 +46,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                     intent.putExtra("note",mCursor.getString(2));
                     intent.putExtra("min",mCursor.getString(4));
                     mContext.startActivity(intent);
-                    Toast.makeText(mContext,String.valueOf(getAdapterPosition()),Toast.LENGTH_SHORT).show();
+
 
                 }
             });
@@ -85,7 +85,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
     @Override
     public int getItemCount() {
-        return mCursor.getColumnCount();
+        return mCursor.getCount();
     }
 
     public void swapCursor (Cursor newcursor){
