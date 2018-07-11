@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Temp Note</string>
+    <string name="channel_name">Temp Note Notification</string>
+    <string name="channel_description">Lorem Ipsum del erot</string>
+    <string name="inf">Infinity</string>
+
+
 </resources>

@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by riyadh on 08-Jul-18.
  */
@@ -38,9 +40,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                 public void onClick(View view) {
                     mCursor.moveToPosition(getAdapterPosition());
                     Intent intent = new Intent(mContext,display.class);
+
+                    intent.putExtra("id",mCursor.getString(0));
                     intent.putExtra("title",mCursor.getString(1));
-                    intent.putExtra("title",mCursor.getString(2));
-                    intent.putExtra("title",mCursor.getString(3));
+                    intent.putExtra("note",mCursor.getString(2));
+                    intent.putExtra("min",mCursor.getString(4));
                     mContext.startActivity(intent);
                     Toast.makeText(mContext,String.valueOf(getAdapterPosition()),Toast.LENGTH_SHORT).show();
 
@@ -61,7 +65,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.recycletemplate,parent,false);
-
         return new NoteViewHolder(view);
     }
 
@@ -72,11 +75,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         }
         String title = mCursor.getString(1);
         String note = mCursor.getString(2);
-        String exp = mCursor.getString(3);
+        String min = mCursor.getString(4);
 
         holder.titleTV.setText(title);
         holder.noteTV.setText(note);
-        holder.expTV.setText(exp);
+        holder.expTV.setText(String.valueOf(min));
         holder.itemView.setTag(mCursor.getString(0));
     }
 

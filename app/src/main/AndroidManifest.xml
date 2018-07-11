@@ -18,6 +18,13 @@
         </activity>
         <activity android:name=".Write" />
         <activity android:name=".display"></activity>
+        <receiver android:name=".processTimerReciever" >
+            <intent-filter>
+                <action android:name="processTimerReceiver" >
+                </action>
+            </intent-filter>
+        </receiver>
     </application>
+
 
 </manifest>

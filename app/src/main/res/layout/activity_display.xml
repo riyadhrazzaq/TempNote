@@ -4,11 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.strange.tempnote.display">
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    android:weightSum="3"
 
-    <TextView
-        android:text="hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    tools:context="com.example.strange.tempnote.Write">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".25"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/okDisplayBT"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="Ok"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/cancelDisplayBT"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/titleDisplayET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".4"
+        android:gravity="top|left"
+        android:hint="Title"
+        android:paddingLeft="10dp"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorHint"
+        android:textCursorDrawable="@null"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/noteDisplayET"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.15"
+        android:gravity="left|top"
+        android:hint="Write something"
+        android:paddingLeft="10dp"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorHint"
+        android:textCursorDrawable="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".20"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:gravity="center"
+            android:text="Infinity"
+            android:textColor="#fff"
+            android:id="@+id/clockDisplayTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

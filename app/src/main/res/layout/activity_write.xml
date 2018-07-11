@@ -9,6 +9,7 @@
     android:weightSum="3"
 
     tools:context="com.example.strange.tempnote.Write">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,51 +18,87 @@
         android:weightSum="2">
 
         <Button
-            android:textAllCaps="false"
             android:id="@+id/okBT"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="Ok"
-            android:textColor="#fff" />
-        <Button
             android:textAllCaps="false"
+            android:textColor="#fff" />
+
+        <Button
             android:id="@+id/cancelBT"
-            android:background="@color/colorAccent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
             android:text="Cancel"
+            android:textAllCaps="false"
             android:textColor="#fff" />
 
     </LinearLayout>
 
     <EditText
-        android:textCursorDrawable="@null"
-        android:paddingLeft="10dp"
-        android:hint="Title"
-        android:gravity="top|left"
-        android:textColorHint="@color/colorHint"
-        android:textColor="#fff"
-        android:textStyle="bold"
         android:id="@+id/titleET"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".5" />
+        android:layout_weight=".4"
+        android:gravity="top|left"
+        android:hint="Title"
+        android:paddingLeft="10dp"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorHint"
+        android:textCursorDrawable="@null"
+        android:textStyle="bold" />
 
     <EditText
-        android:textCursorDrawable="@null"
-        android:paddingLeft="10dp"
-        android:hint="Write something"
-        android:textColorHint="@color/colorHint"
-        android:gravity="left|top"
-        android:textColor="#fff"
         android:id="@+id/noteET"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.25" />
+        android:layout_weight="2.15"
+        android:gravity="left|top"
+        android:hint="Write something"
+        android:paddingLeft="10dp"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorHint"
+        android:textCursorDrawable="@null" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".20"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/downBT"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="-" />
+
+        <TextView
+            android:gravity="center"
+            android:text="Infinity"
+            android:textColor="#fff"
+            android:id="@+id/clockTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/upBT"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:text="+" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
