@@ -40,7 +40,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                 public void onClick(View view) {
                     mCursor.moveToPosition(getAdapterPosition());
                     Intent intent = new Intent(mContext,display.class);
-
                     intent.putExtra("id",mCursor.getString(0));
                     intent.putExtra("title",mCursor.getString(1));
                     intent.putExtra("note",mCursor.getString(2));

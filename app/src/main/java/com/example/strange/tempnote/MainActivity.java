@@ -75,9 +75,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 fun.removeById(Integer.parseInt(viewHolder.itemView.getTag().toString()));
+                mAdapter.swapCursor(fun.getAllByCursor());
                 mAdapter.notifyDataSetChanged();
-                recreate();
-
 
             }
         }).attachToRecyclerView(rv);
