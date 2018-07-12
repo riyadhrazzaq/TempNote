@@ -46,14 +46,14 @@ public class Write extends AppCompatActivity {
                 } else {
                     boolean x = fun.addData(title, note, exp, min);
                 }
-                finish();
+
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }

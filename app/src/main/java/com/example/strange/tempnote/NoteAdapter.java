@@ -39,7 +39,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                 @Override
                 public void onClick(View view) {
                     mCursor.moveToPosition(getAdapterPosition());
-                    Toast.makeText(mContext,mCursor.getString(0),Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(mContext,display.class);
                     intent.putExtra("id",mCursor.getString(0));
                     intent.putExtra("title",mCursor.getString(1));

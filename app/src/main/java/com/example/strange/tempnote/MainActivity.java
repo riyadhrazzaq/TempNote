@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (!prefs.getBoolean("firstTime", false)) {
 
+            Toast.makeText(this,"Manager created",Toast.LENGTH_SHORT).show();
 
             int perSec = 60;
             AlarmManager processTimer = (AlarmManager) getSystemService(ALARM_SERVICE);
