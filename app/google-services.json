@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "802106613968",
+    "firebase_url": "https://in-shit.firebaseio.com",
+    "project_id": "in-shit",
+    "storage_bucket": "in-shit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802106613968:android:bae7f23d489292ad",
+        "android_client_info": {
+          "package_name": "com.example.strange.tempnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802106613968-50vgt4m3a5udnv7n6mj9gk6r7dlt73op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.strange.tempnote",
+            "certificate_hash": "d243b2295ef30aa3b941b0c21390867d3b668d13"
+          }
+        },
+        {
+          "client_id": "802106613968-8tlrjrt6nf06u1vb7ptef05oridik28n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxYUsDy8YmEyfMkmf9I_Il0c5h5lO6j7E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802106613968-8tlrjrt6nf06u1vb7ptef05oridik28n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

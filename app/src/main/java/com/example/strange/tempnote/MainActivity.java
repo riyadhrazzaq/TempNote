@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Stetho.initializeWithDefaults(this);
         //AlarmManager Setup
-
+        /*
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         if (!prefs.getBoolean("firstTime", false)) {
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("firstTime", true);
             editor.commit();
         }
-
+        */
 
         // RecyclerView Initiate
         rv = findViewById(R.id.oneRV);
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                Toast.makeText(getApplicationContext(),viewHolder.itemView.getTag().toString(),Toast.LENGTH_SHORT).show();
                 fun.removeById(Integer.parseInt(viewHolder.itemView.getTag().toString()));
                 mAdapter.notifyDataSetChanged();
                 recreate();

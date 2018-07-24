@@ -37,21 +37,12 @@ public class processTimerReciever extends BroadcastReceiver {
             Map.Entry val = (Map.Entry) it.next();
             if (Long.valueOf(System.currentTimeMillis()).compareTo((Long) val.getKey()) != -1) {
                 fun.removeById(Integer.parseInt(String.valueOf(val.getValue())));
-<<<<<<< Updated upstream
-                count++;
-            }
-        }
-        MainActivity.mAdapter.notifyDataSetChanged();
-
-
-=======
                 count = count +1;
             }
         }
         MainActivity.mAdapter.swapCursor(fun.getAllByCursor());
         MainActivity.mAdapter.notifyDataSetChanged();
         /*
->>>>>>> Stashed changes
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = String.valueOf(R.string.channel_name);
             String description = String.valueOf(R.string.channel_description);
@@ -63,8 +54,6 @@ public class processTimerReciever extends BroadcastReceiver {
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
-<<<<<<< Updated upstream
-=======
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, "default")
                 .setSmallIcon(R.drawable.ic_down)
@@ -82,16 +71,7 @@ public class processTimerReciever extends BroadcastReceiver {
         count = 0;
 
 
->>>>>>> Stashed changes
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, "default")
-                .setSmallIcon(R.drawable.ic_down)
-                .setContentTitle("TempNote")
-                .setContentText(count + " notes deleted")
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-        notificationManager.notify(177, mBuilder.build());
 
 
     }

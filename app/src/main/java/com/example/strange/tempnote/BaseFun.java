@@ -34,7 +34,7 @@ public class BaseFun extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase mydb) {
 
-        String s = "CREATE TABLE " + TABLE_NAME + "(" + col_id + " INT PRIMARY KEY," + col_title + " TEXT," + col_note +
+        String s = "CREATE TABLE " + TABLE_NAME + "(" + col_id + " INT AUTO_INCREMENT PRIMARY KEY," + col_title + " TEXT," + col_note +
                 " TEXT," + col_exp + " TEXT," + col_min + " TEXT)";
         mydb.execSQL(s);
         Log.e("dbstat", "database created successfully");
@@ -56,8 +56,10 @@ public class BaseFun extends SQLiteOpenHelper {
         cv.put(col_note, note);
         cv.put(col_exp, exp);
         cv.put(col_min, min);
+
         if (!exp.equalsIgnoreCase(mContext.getString(R.string.inf)))
             processTimerReciever.map.put(Long.valueOf(exp), id);
+
         long flag = sqdb.insert(TABLE_NAME, null, cv);
         if (flag == -1) return false;
         else return true;
@@ -66,8 +68,9 @@ public class BaseFun extends SQLiteOpenHelper {
 
     Cursor getAllByCursor() {
         SQLiteDatabase sq = this.getReadableDatabase();
-        String q = "SELECT * FROM " + TABLE_NAME;
+        String q = "SELECT * FROM " + TABLE_NAME + " ORDER BY rowid DESC";
         Cursor c = sq.rawQuery(q, null);
+
         return c;
 
     }
